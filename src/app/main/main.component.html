@@ -1,0 +1,41 @@
+<div class="container" style="padding: 50px;">
+
+  <div class="row text-center">
+    <div class="col-md-12" style="padding: 50px;border: solid;">
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Full Name" id="fullname" [(ngModel)]="fullName" >
+      </div>
+      <div class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Email" id="email"  [(ngModel)]="email">
+      </div>
+
+      <button type="button" class="btn btn-success" (click)="addUser(fullName, email)">Add</button>
+
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12" style="padding: 50px;border: solid;">
+      <h1>Content</h1>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of items$ | async">
+            <td>{{i.fullName}}</td>
+            <td>{{i.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+</div>
